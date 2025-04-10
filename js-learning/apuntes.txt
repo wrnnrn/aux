@@ -1,0 +1,9 @@
+var x = document.getElementById("Id del elemento")
+
+x.textContent("Contenido del elemento")
+
+
+LISTAS
+- let variable = lista.indexOf(elementodelalista) --> Da el índice dentro de la lista del elemento.
+
+- lista.splice(indice_de_elemento_a_elimitar, 1)
