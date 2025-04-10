@@ -1,3 +1,4 @@
+/*
 COSAS HECHAS
 - Botones de la calculadora
 - Detectar igual
