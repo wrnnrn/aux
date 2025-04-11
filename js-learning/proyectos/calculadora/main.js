@@ -16,9 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		};
 
 		// Antes de la función para calcular el resultado, tenemos que hacer una función que identifique elementos en el array.
-		function find(elementoBuscar) {
-			elementos.indexOf(elementoBuscar);
-			
+		function find(elementoBuscar, elementoGuardado) {
+			elementoGuardado = elementos.indexOf(elementoBuscar);
 		}
 
 		// Funcion para calcular
