@@ -1,76 +1,32 @@
 /*
-COSAS HECHAS
-- Botones de la calculadora
-- Detectar igual
-- Detectar elementos pulsados
-
-COSAS POR HACER
-- Orden de jerarquía
-- Operar elementos según orden de jerarquía
-- Imprimir por pantalla
-- Depurar
+ELEMENTOS:
+- Array donde se guarden los elementos pulsados.
+- Funcion calcular:
+	- Identificar jerarquía de elementos: Se guarda una lista donde se encuentre el índice de los elementos, donde en la posición 0 esté el más importante
+	- El resultado de este se guarda en una variable let, la cual se muestra en pantalla.
+- Tiene que haber console.log en los elementos que se precien.
 */
 
-
-document.addEventListener("DOMContentLoaded", () => {
-	// Registar los números que se han pulsado y guardarlos en una variable
-	var elementos_pulsados = [];
+document.addEventListener('DOMContentLoaded', () => {
+	let elementos = [];
 	document.addEventListener('click', (event) => {
-		if (event.target.tagName === "BUTTON") {
-			elementos_pulsados.push(event.target.id)
-			console.log(elementos_pulsados)
+		if(event.target.tagName === "BUTTON"){
+			elementos.push(event.target.id);
+			console.log(elementos);
 		};
+
+		// Antes de la función para calcular el resultado, tenemos que hacer una función que identifique elementos en el array.
+		function find(elementoBuscar) {
+			elementos.indexOf(elementoBuscar);
+			
+		}
+
+		// Funcion para calcular
+		function calcular() {
+			console.log("");
+		}
+
 	});
 
-	const resultado = document.getElementById("resultado");
-	resultado.textContent = elementos_pulsados
-	
-	// Hay que hacer un condicional al pulsar igual para operar los elementos
-	// Para operar hay que establecer el orden de jerarquía.
 
-	// Condicional para el igual
-	var igual = document.getElementById("igual")
-	igual.addEventListener("click", () => {
-		operar()
-	})
-
-	function jerarquia() {
-		let resultado = []
-		if (elementos_pulsados.includes("*")) {
-			
-			let elementos = [] // Se utiliza let para que solo sea vigente en este bloque
-			let i = 0
-			while (i !== -1) { // Cuando un elemento no pertenece a la lista, el resultado del indexOf es -1.
-				elementos.push(i)
-				i = elementos_pulsados.indexOf("*", i+1)
-			}
-			
-			// Operamos la multiplicación
-			// Los elementos de los laterales de la multip, se operan.
-
-			let j
-			while(elementos > 0){
-				resultado.push(elementos_pulsados[elementos[j-1]]*elementos_pulsados[elementos[j+1]])
-				elementos.splice(0, 1)
-			}
-		}
-
-	}
-		// Orden de jerarquía de las operaciones
-		// Detectar en la lista los elementos
-		// Si hay * o /, operar con sus elementos laterales
-		// Si hay /*, error de sintaxis
-		function signos(){
-			alert("signos")
-			// Para los signos de suma y resta
-		}
-	
-	function operar() {
-		jerarquia()
-		alert("Igual pulsado")
-		elementos_pulsados.length = 0
-		// Operar con los elementos de la lista y usando la jerarquía
-	}
-
-	}
-  
+})	
